@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template Syntax</title>
+</head>
+<body>
+<div id="message">
+    {{ message }}    <span v-html="html"></span>
+    <div :id="dynamicId">Div avec un id dynamic</div>
+    <button :disabled="isButtonDisabled">Button</button>
+    <div v-bind="objectOfAttrs">ObjectOfAttrs</div>
+    {{ number + 1 }}<br>
+    {{ ok ? 'YES' : 'NO' }}<br>
+    {{ message.split('').reverse().join('') }}<br>
+    <div :id="`list-${dynamicId}`"></div>
+    <p v-if="seen">Now you see me</p>
+    <a :href="url">click me</a>
+    <a :[attributeName]="url">click</a>
+</div>
+<script type="module" src="/src/js/essentials/templateSyntax.js"></script>
+
+</body>
+</html>
