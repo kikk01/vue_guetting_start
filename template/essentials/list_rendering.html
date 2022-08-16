@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List rendering</title>
+</head>
+<body>
+<div id="app">
+    <li v-for="(item, index) in items">
+        {{ parentMessage}} - {{ index }} - {{ item.message }}
+    </li>
+    <li v-for="({message}) in items">
+        {{ message }}
+    </li>
+    <li v-for="({message}, index) in items">
+        {{ message }} - {{ index }}
+    </li>
+
+    <ul>
+        <li v-for="value in myObject">
+            {{ value }}
+        </li>
+        <li v-for="(value, key) in myObject">
+            {{ key }} : {{ value }}
+        </li>
+        <li v-for="(value, key, index) in myObject">
+            {{ index }}. {{ key }} : {{ value }}
+        </li>
+        <span v-for="n in 10">{{ n }}</span>
+    </ul>
+
+    <ul>
+        <template v-for="item in items">
+            <li>{{ item.message}}</li>
+            <li class="provider" role="presentation"></li>
+        </template>
+
+    </ul>
+
+    <li v-for="n in evenNumbers">{{ n }}</li>
+</div>
+<script type="module" src="/src/js/essentials/listRendering.js"></script>
+</body>
+</html>
