@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Class and style bindings</title>
+</head>
+<body>
+<div id="app">
+    <div class="static" :class="{active: isActive, 'text-danger': hasError}">
+        <span :class="classObject"></span>
+        <span :class="classObjectComputed"></span>
+        <span :class="[activeClass, errorClass]"></span>
+        <span :class="[isActive ? activeClass : '', errorClass]"></span>
+        <span :class="[{active: isActive}, errorClass]"></span>
+    </div>
+</div>
+
+<div id="biding-inline-style">
+    <div :style="{color: activeColor, fontSize: fontSize + 'px'}">Test</div>
+    <div :style="styleObject">Test</div>
+</div>
+<script type="module" src="/src/js/essentials/classAndStyleBindings.js"></script>
+</body>
+</html>
