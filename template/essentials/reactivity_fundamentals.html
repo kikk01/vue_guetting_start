@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reactivity fundamentals</title>
+</head>
+<body>
+<div id="reactivity-fundamentals">
+    {{ count }}
+</div>
+<div id="declaring-methods">
+    <button @click="increment">{{ count }}</button>
+</div>
+<div id="deep-reactivity">
+    <button @click="mutateDeeply">{{ obj }}</button>
+</div>
+<div id="stateful-methods">
+    <button @click="click">test debounce</button>
+</div>
+<script type="module" src="/src/js/essentials/reactivityFundamentals.js"></script>
+
+</body>
+</html>
