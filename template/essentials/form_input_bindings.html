@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Input Bindings</title>
+</head>
+<body>
+<div id="app">
+    <p>Message is: {{ message }}</p>
+    <input v-model="message" placeholder="edit me">
+    <p>Multiline message is:</p>
+    <p style="white-space: pre-line;">{{ messageTextarea }}</p>
+    <textarea v-model="messageTextarea" placeholder="add multiple lines"></textarea>
+    <p>
+        <input type="checkbox" id="checkbox" v-model="checked" />
+        <label for="checkbox">{{ checked }}</label>
+    </p>
+
+    <div>Checked names : {{ checkedNames}}</div>
+    <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
+    <label for="jack">Jack</label>
+
+    <input type="checkbox" value="John" id="john" v-model="checkedNames">
+    <label for="john">John</label>
+
+    <input type="checkbox" name="mike" id="mike" value="Mike" v-model="checkedNames">
+    <label for="mike">Mike</label>
+
+    <div>Picked: {{ picked }}</div>
+
+    <input type="radio" name="one" id="one" value="One" v-model="picked">
+    <label for="one">One</label>
+
+    <input type="radio" name="two" id="two" value="Two" v-model="picked">
+    <label for="two">Two</label>
+
+
+    <div>Selected: {{ selected }}</div>
+    <select v-model="selected" multiple>
+        <option disabled value="">Please select one</option>
+        <option>A</option>
+        <option>B</option>
+        <option>C</option>
+    </select>
+
+
+    <div>
+        <select v-model="dynamicSelected">
+            <option v-for="option in options" :value="option.value">{{ option.text }}</option>
+            <div>dynamic selected: {{ dynamicSelected }}</div>
+        </select>
+    </div>
+
+    <p>{{ msg }}</p>
+    <input v-model.lazy="msg" />
+
+</div>
+<script type="module" src="/src/js/essentials/formInputBindings.js"></script>
+</body>
+</html>
