@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event handling</title>
+</head>
+<body>
+<div id="app">
+    <button @click="greet">Greet</button>
+    <button @click="say('hello')">method with argument</button>
+    <button @click="warn('Form cannot be submitted yet', $event)">method with argument and event</button>
+    <button @click.capture="capture">test capture</button>
+    <input @keyup.enter="keyUpEnter">
+</div>
+<script type="module" src="/src/js/essentials/eventHandling.js"></script>
+</body>
+</html>
